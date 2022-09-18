@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    {% block title %}
+    <title>Blog</title>
+    {% endblock title %}
+    <meta content="Learn Chinese Effectively and Effortlessly with Blogs" name="description">
+    <meta content="Blabla Chinese Blogs" name="keywords">
+
+    <!-- Favicons -->
+    <link href=" {% static 'img/Blogo.png' %} " rel="icon">
+    <link href=" {% static 'img/Blogo.png' %} " rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href=" {% static 'vendor/animate.css/animate.min.css' %} " rel="stylesheet">
+    <link href=" {% static 'vendor/bootstrap/css/bootstrap.min.css' %} " rel="stylesheet">
+    <link href=" {% static 'vendor/bootstrap-icons/bootstrap-icons.css' %} " rel="stylesheet">
+    <link href=" {% static 'vendor/boxicons/css/boxicons.min.css' %} " rel="stylesheet">
+    <link href=" {% static 'vendor/glightbox/css/glightbox.min.css' %} " rel="stylesheet">
+    <link href=" {% static 'vendor/swiper/swiper-bundle.min.css' %} " rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href=" {% static 'css/style.css' %} " rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: eBusiness - v4.8.0
+    * Template URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+
+        <div class="logo">
+            <h1><a href="/"><span>Blabla</span>Chinese</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href=" {% static 'index.html' %} "><img src=" {% static 'img/logo.png' %} " alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a href='/'>Home</a></li>
+                <li><a class="nav-link scrollto active" href="{% url 'blog' %}">Blog</a></li>
+                <li><a href="https://www.youtube.com/c/BlablaChinese/featured" target='_blank' rel='noreferer noopener'>Youtube</a>
+                </li>
+
+                <!-- <li><a class="nav-link scrollto" href=" {% static '#services' %} ">Services</a></li> -->
+                <!-- 后面改成GP模板样式的首页内容，Community， reallife，普及CI方法--不需要完全懂100%，和宣传我们的可靠性 -->
+
+                <!-- <li><a class="nav-link scrollto" href=" {% static '#portfolio' %} ">Portfolio</a></li> -->
+                <!-- 后面可以把Portfolio结构应用在Blog, YT分类搜索，展示在首页。比如Vlog，Characters，CI Series 。 方便大家Onepage 往下滑看到所有内容-->
+
+                <li><a class="nav-link scrollto" href="{% url 'home' %}#about">About</a></li>
+                <!-- <li><a class="nav-link scrollto" href=" {% static '#team' %} ">Team</a></li> -->
+                <!-- Team内容加到About下面 -->
+
+                <li><a class="nav-link scrollto" href="{% url 'home' %}#contact">Contact</a></li>
+
+                {% if user.is_authenticated %}
+                <li><a class="nav-link scrollto" href="{% url 'add-post' %}">Add Post</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'logout' %}">Logout</a></li>
+
+                {% else %}
+                <li><a class="nav-link scrollto" href="{% url 'register' %}">Register</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+
+
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+{% block body %}{% endblock body %}

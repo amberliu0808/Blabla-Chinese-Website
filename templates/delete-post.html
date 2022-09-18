@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Delete Post</title>
+    {% endblock title %}
+
+{% block body %}
+{% if user.is_authenticated %}
+
+
+<body>
+<h3 style='padding-top:80px'>Delete the post</h3><br>
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <br>
+        <h3>Delete: {{blog.title}}</h3>
+        <br>
+
+        <p>Are you sure?</p>
+        <button class="btn btn-success">Delete</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+
+{% else %}
+    <div class="container">
+    <h3 style="padding-top: 100px">Please login first, dear friend :)<br>
+          have a wonderful day!</h3>
+    </div>
+
+{% endif %}
+</html>
+{% endblock body %}
+
+

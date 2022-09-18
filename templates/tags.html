@@ -1,0 +1,90 @@
+{% extends 'base1.html' %}
+{% block Blog-link %}
+href='{% url 'blog' %}'
+{% endblock Blog-link %}
+
+
+
+{% block recent-post %}
+<!-- 先隐藏，因为不能load thumbnail
+
+<div class="single-blog-page">
+
+
+    <div class="left-blog">
+        <h4>recent post</h4>
+        <div class="recent-post">
+
+            {% for blog in categories_posts %}
+
+            <div class="recent-single-post">
+                <div class="post-img">
+                    <a href="{% url 'blogpost' blog.slug %}">
+                        <img src=" {{blog.thumbnail}} " alt="">
+                    </a>
+                </div>
+                <div class="pst-content">
+                    <p><a href="{% url 'blogpost' blog.slug %}"> {{blog.title}}</a></p>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+-->
+{% endblock recent-post %}
+
+
+{% block single-blog %}
+<div class="col-md-8 col-sm-8 col-xs-12">
+    {% for blog in tags_posts %}
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="single-blog">
+                {% if blog.thumbnail %}
+                <div class="single-blog-img">
+                    <a href="{% url 'blogpost' blog.slug %}">
+                        <img src=" {{blog.thumbnail.url}} " alt="">
+                    </a>
+                </div>
+                {% endif %}
+                <div class="blog-meta">
+                   <div class="entry-meta">
+                    <span class="author-meta"><i class="bi bi-person"></i> {{blog.author.first_name}} {{blog.author.last_name}}  </a></span>&nbsp;
+                                        <span><i class="bi bi-clock"></i>{{blog.created_time.date}} </span>&nbsp;
+                                        <span class="tag-meta">
+                        <i class="bi bi-folder"></i>
+                        <a href="{% url 'categories' blog.category|slugify %}">{{blog.category}} </a>
+                      </span>
+                                        <span>&nbsp;
+                        <i class="bi bi-tags"></i>
+                        <a href="{% url 'tags' blog.tag|slugify %}">{{blog.tag}}</a>
+
+                      </span>
+                </div>
+                <div class="blog-text">
+                    <h4>
+                        <a href="{% url 'blogpost' blog.slug %}">{{blog.title}}</a>
+                    </h4>
+                    <p>
+                        {{blog.shortcut}}
+                    </p>
+                </div>
+                <span>
+                    <a href="{% url 'blogpost' blog.slug %}" class="ready-btn">Read more</a>
+                  </span>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- End single blog -->
+
+
+
+    </div>
+</div>
+
+{% endblock single-blog %}

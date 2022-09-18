@@ -1,0 +1,553 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Home</title>
+    <meta content="Learn Chinese Effectively and Effortlessly" name="description">
+    <meta content="Blabla Chinese" name="keywords">
+
+    <!-- Favicons -->
+    <link href=" {% static 'img/Blogo.png' %} " rel="icon">
+    <link href=" {% static 'img/Blogo.png' %} " rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href=" {% static 'vendor/animate.css/animate.min.css' %} " rel="stylesheet">
+    <link href=" {% static 'vendor/bootstrap/css/bootstrap.min.css' %} " rel="stylesheet">
+    <link href=" {% static 'vendor/bootstrap-icons/bootstrap-icons.css' %} " rel="stylesheet">
+    <link href=" {% static 'vendor/boxicons/css/boxicons.min.css' %} " rel="stylesheet">
+    <link href=" {% static 'vendor/glightbox/css/glightbox.min.css' %} " rel="stylesheet">
+    <link href=" {% static 'vendor/swiper/swiper-bundle.min.css' %} " rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href=" {% static 'css/style.css' %} " rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: eBusiness - v4.8.0
+    * Template URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+
+        <div class="logo">
+            <h1><a href="/"><span>Blabla</span>Chinese</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href=" {% static 'index.html' %} "><img src=" {% static 'img/logo.png' %} " alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                <li><a href="blog/">Blog</a></li>
+                <li><a href="https://www.youtube.com/c/BlablaChinese/featured" target='_blank' rel='noreferer noopener'>Youtube</a>
+                </li>
+
+                <!-- <li><a class="nav-link scrollto" href=" {% static '#services' %} ">Services</a></li> -->
+                <!-- 后面改成GP模板样式的首页内容，Community， reallife，普及CI方法--不需要完全懂100%，和宣传我们的可靠性 -->
+
+                <!-- <li><a class="nav-link scrollto" href=" {% static '#portfolio' %} ">Portfolio</a></li> -->
+                <!-- 后面可以把Portfolio结构应用在Blog, YT分类搜索，展示在首页。比如Vlog，Characters，CI Series 。 方便大家Onepage 往下滑看到所有内容-->
+
+                <li><a class="nav-link scrollto" href="#about">About</a></li>
+                <!-- <li><a class="nav-link scrollto" href=" {% static '#team' %} ">Team</a></li> -->
+                <!-- Team内容加到About下面 -->
+
+
+                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+<!-- ======= hero Section ======= -->
+<section id="hero">
+    <div class="hero-container" style='padding-top: 80px;'>
+
+        <div style="background-image: url( {% static 'img/hero-carousel/4.jpg' %} )">
+            <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">Say bye to grammars &nbsp; &nbsp; Learn
+                    effectively</h2>
+                <p class="animate__animated animate__fadeInUp">you are accompanied<br>from BEGINNER to INTERMEDIATE</p>
+                <a href="https://blablachinese.youcanbook.me/" target='_blank' rel='no referrer no opener'
+                   class="btn-get-started scrollto animate__animated animate__fadeInUp">Schedule Lessons with Amber</a>
+            </div>
+
+
+        </div>
+    </div>
+</section><!-- End Hero Section -->
+
+<main id="main">
+
+    <!-- ======= Blog Section ======= -->
+    <div id="blog" class="blog-area">
+        <div class="blog-inner area-padding">
+            <div class="blog-overly"></div>
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="section-headline text-center">
+                            <h2>Latest Blogs</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Start Left Blog -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="single-blog">
+                            <div class="single-blog-img">
+                                <a href="{% url 'blogpost' blog_post1.slug|slugify %}">
+                                    <img src=" {{blog_post1.thumbnail.url}} " alt="">
+                                </a>
+                            </div>
+                            <div class="blog-meta">
+                  <span class="comments-type">
+                    <i class="fa fa-comment-o"></i>
+                    <a>{{blog_post1.author.first_name}} {{blog_post1.author.last_name}}</a>
+                  </span>
+                                <span class="date-type">
+                    <i class="fa fa-calendar"></i>{{blog_post1.created_time.date}}
+                  </span>
+                            </div>
+                            <div class="blog-text">
+                                <h4>
+                                    <a href="{% url 'blogpost' blog_post1.slug|slugify %}">{{blog_post1.title}}</a>
+                                </h4>
+                                <p>
+                                    {{blog_post1.shortcut}}
+                                </p>
+                            </div>
+                            <span>
+                  <a href="{% url 'blogpost' blog_post1.slug|slugify%}" class="ready-btn">Read more</a>
+                </span>
+                        </div>
+                        <!-- Start single blog -->
+                    </div>
+                    <!-- End Left Blog-->
+                    <!-- Start Left Blog -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="single-blog">
+                            <div class="single-blog-img">
+                                <a href="{% url 'blogpost' blog_post2.slug|slugify %}">
+                                    <img src=" {{blog_post2.thumbnail.url}} " alt="">
+                                </a>
+                            </div>
+                            <div class="blog-meta">
+                  <span class="comments-type">
+                    <i class="fa fa-comment-o"></i>
+                    <a>{{blog_post2.author.first_name}} {{blog_post2.author.last_name}}</a>
+                  </span>
+                                <span class="date-type">
+                    <i class="fa fa-calendar"></i>{{blog_post2.created_time.date}}
+                  </span>
+                            </div>
+                            <div class="blog-text">
+                                <h4>
+                                    <a href="{% url 'blogpost' blog_post2.slug|slugify %}">{{blog_post2.title}}</a>
+                                </h4>
+                                <p>
+                                    {{blog_post2.shortcut}} </p>
+                            </div>
+                            <span>
+                  <a href="{% url 'blogpost' blog_post2.slug|slugify %}" class="ready-btn">Read more</a>
+                </span>
+                        </div>
+                        <!-- Start single blog -->
+                    </div>
+                    <!-- End Left Blog-->
+                    <!-- Start Right Blog-->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="single-blog">
+                            <div class="single-blog-img">
+                                <a href="{% url 'blogpost' blog_post3.slug|slugify %}">
+                                    <img src=" {{blog_post3.thumbnail.url}} " alt="">
+                                </a>
+                            </div>
+                            <div class="blog-meta">
+                  <span class="comments-type">
+                    <i class="fa fa-comment-o"></i>
+                    <a>{{blog_post3.author.first_name}} {{blog_post3.author.last_name}}</a>
+                  </span>
+                                <span class="date-type">
+                    <i class="fa fa-calendar"></i>{{blog_post3.created_time.date}}
+                  </span>
+                            </div>
+                            <div class="blog-text">
+                                <h4>
+                                    <a href="{% url 'blogpost' blog_post3.slug|slugify %}">{{blog_post3.title}}</a>
+                                </h4>
+                                <p>
+                                    {{blog_post3.shortcut}} </p>
+                            </div>
+                            <span>
+                  <a href="{% url 'blogpost' blog_post3.slug|slugify %}" class="ready-btn">Read more</a>
+                </span>
+                        </div>
+                    </div>
+                    <!-- End Right Blog-->
+                </div>
+            </div>
+        </div>
+    </div><!-- End Blog Section -->
+
+
+    <!-- ======= About Section ======= -->
+    <div id="about" class="about-area area-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="section-headline text-center">
+                        <h2>About Blabla Chinese</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- single-well start-->
+
+                <!-- single-well end-->
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="well-middle">
+                        <div class="single-well text-center">
+
+                            <h5>
+                                We are working to make these input materials <strong>INTERESTING</strong> and from
+                                <strong>REAL LIFE</strong><br>
+                                also some SERIES are provided to help you keep your passion & acquire Chinese more
+                                systemically and effectively!
+                                <br>
+                                <p></p>
+                                <br>
+                                Keep with us to acquire Chinese naturally
+                                <br>with comprehensible input and TPRS Chinese Stories.
+                                <br>
+                                Enjoy your time here!
+                            </h5>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- End col-->
+            </div>
+        </div>
+    </div><!-- End About Section -->
+
+
+    <!-- ======= Team Section ======= -->
+    <div id="team" class="our-team-area area-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="section-headline text-center">
+                        <h2>Our Team</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12"></div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="single-team-member">
+                        <div class="team-img">
+                            <a href="#">
+                                <img src=" {% static 'img/team/Amber.JPG' %} ">
+                            </a>
+
+                        </div>
+                        <div class="team-content text-center">
+                            <h4>Amber Liu</h4>
+                            <p>刘亚丹</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End column -->
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="single-team-member">
+                        <div class="team-img">
+                            <a href="#">
+                                <img src=" {% static 'img/team/Jenro5.jpg' %} " alt="">
+                            </a>
+
+                        </div>
+                        <div class="team-content text-center">
+                            <h4>Jenro Wei</h4>
+                            <p>魏静茹</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12"></div>
+                <!-- End column -->
+
+            </div>
+        </div>
+    </div><!-- End Team Section -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <div id="contact" class="contact-area">
+        <div class="contact-inner area-padding">
+            <div class="contact-overly"></div>
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="section-headline text-center">
+                            <h2>Contact us</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Start contact icon column -->
+                    <div class="col-md-4">
+                        <div class="contact-icon text-center">
+                            <div class="single-icon">
+                                <i href='https://discord.gg/wMUTN6jXkY' class="bi bi-discord"></i>
+                                <p>
+                                    <a href='https://discord.gg/wMUTN6jXkY' target="_blank" rel="noreferrer noopener">Blabla
+                                        Chinese<br></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start contact icon column -->
+                    <div class="col-md-4">
+                        <div class="contact-icon text-center">
+                            <div class="single-icon">
+                                <i class="bi bi-envelope"></i>
+                                <p>
+                                    <a href="mailto:amberliu0808@foxmail.com">amberliu0808@foxmail.com<br></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start contact icon column -->
+                    <div class="col-md-4">
+                        <div class="contact-icon text-center">
+                            <div class="single-icon">
+                                <i class="bi bi-wechat"></i>
+                                <p>
+                                    <a href='static/img/team/Amber Wechat.JPG' target="_blank"
+                                       rel="noreferrer noopener">blablachinese<br></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <!-- Amber Contact with bootstrap -->
+                    <!--
+                    {% if name %}
+                        <h2>Thanks {{name}}!</h2>
+                        <p>We received your email, and will respond shortly :)</p>
+                    {% else %}
+                        <form method="post" action="{% url 'home'%}#contact">
+                        {% csrf_token %}
+                        <div class="mb-3">
+
+                            <label for="name" class="form-label"></label>
+                            <input type="text" class="form-control" id="name" name="name"
+                                   placeholder="Your Name">
+
+                            <label for="exampleFormControlInput1" class="form-label"></label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" name="email"
+                                   placeholder="Your Email">
+                            <label for="subject" class="form-label"></label>
+                            <input type="text" class="form-control" id="subject" name="subject"
+                                   placeholder="Subject">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label"></label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="4"
+                                      placeholder="Message"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-outline-secondary btn-lg">SEND MESSAGE</button>
+                        </div>
+                        </form>
+                    {% endif %}
+                    -->
+
+                    <!-- End Amber's Contact -->
+
+                    <!-- Start  contact -->
+                    <!--
+                    <div class="col-md-12">
+                        <div class="form contact-form">
+                            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control" id="name"
+                                           placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input type="email" class="form-control" name="email" id="email"
+                                           placeholder="Your Email" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input type="text" class="form-control" name="subject" id="subject"
+                                           placeholder="Subject" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <textarea class="form-control" name="message" rows="5" placeholder="Message"
+                                              required></textarea>
+                                </div>
+                                <div class="my-3">
+                                    <div class="loading">Loading</div>
+                                    <div class="error-message"></div>
+                                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    -->
+                    <!-- End Left contact -->
+                </div>
+            </div>
+        </div>
+    </div><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer>
+    <div class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-content">
+                        <div class="footer-head">
+                            <div class="footer-logo">
+                                <h2>Blabla Chinese</h2>
+                            </div>
+
+                            <p>Join our community and follow us.<br> Feel free to send emails or messages to Amber /
+                                Jenro.</p>
+                            <div class="footer-icons">
+                                <ul>
+                                    <li>
+                                        <a href="https://discord.gg/wMUTN6jXkY" target='_blank'
+                                           rel='noreferrer no opener'><i class="bi bi-discord"></i></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://www.youtube.com/c/BlablaChinese/featured" target='_blank'
+                                           rel='noreferrer no opener'><i class="bi bi-youtube"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/blablachinese/" target='_blank'
+                                           rel='noreferrer no opener'><i class="bi bi-instagram"></i></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end single footer -->
+                <div class="col-md-4">
+                    <div class="footer-content">
+                        <div class="footer-head">
+                            <h4>Useful Links</h4>
+
+                            <div class="footer-contacts">
+                                <a href='#hero'>Home</a><br>
+                                <a href='#blog'>Blog</a><br>
+                                <a href='https://www.youtube.com/c/BlablaChinese/featured' target='_blank'
+                                   rel='noreferrer no opener'>Youtube</a><br>
+                                <a href='#about'>About</a><br>
+                                <a href='#contact'>Contact</a><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end single footer -->
+                <div class="col-md-4">
+                    <div class="footer-content">
+                        <div class="footer-head">
+                            <h4>Youtube</h4>
+                            <div class="flicker-img">
+
+                                <a href="https://www.youtube.com/watch?v=xH2sZPR2TXA" target='_blank'
+                                   rel='noreferrer no opener'><img src="http://img.youtube.com/vi/xH2sZPR2TXA/mqdefault.jpg
+" alt=""></a>
+                                <a href="https://youtu.be/8wKv7-h-m6I" target='_blank' rel='noreferrer no opener'><img
+                                        src="http://img.youtube.com/vi/8wKv7-h-m6I/mqdefault.jpg
+" alt=""></a>
+                                <a href="https://www.youtube.com/watch?v=H5nxloNi3mE" target='_blank'
+                                   rel='noreferrer no opener'><img src="http://img.youtube.com/vi/H5nxloNi3mE/mqdefault.jpg
+" alt=""></a>
+                                <a href="https://www.youtube.com/watch?v=8taTmPUwDqs" target='_blank'
+                                   rel='noreferrer no opener'><img src="http://img.youtube.com/vi/8taTmPUwDqs/mqdefault.jpg
+
+" alt=""></a>
+                                <a href="https://youtu.be/-ODWtTi27AI" target='_blank' rel='noreferrer no opener'><img
+                                        src="http://img.youtube.com/vi/-ODWtTi27AI/mqdefault.jpg" alt=""></a>
+                                <a href="https://www.youtube.com/watch?v=2fDQLBZuBck" target='_blank'
+                                   rel='noreferrer no opener'><img
+                                        src="http://img.youtube.com/vi/2fDQLBZuBck/mqdefault.jpg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-area-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="copyright text-center">
+                        <p>
+                            &copy; Copyright 2022 <strong>Blabla Chinese</strong>. All Rights Reserved
+                        </p>
+                    </div>
+                    <div class="credits">
+                        <!--
+                        All the links in the footer should remain intact.
+                        You can delete the links only if you purchased the pro version.
+                        Licensing information: https://bootstrapmade.com/license/
+                        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
+                      -->
+                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer><!-- End  Footer -->
+
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src=" {% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %} "></script>
+<script src=" {% static 'vendor/glightbox/js/glightbox.min.js' %} "></script>
+<script src=" {% static 'vendor/isotope-layout/isotope.pkgd.min.js' %} "></script>
+<script src=" {% static 'vendor/swiper/swiper-bundle.min.js' %} "></script>
+<script src=" {% static 'vendor/php-email-form/validate.js' %} "></script>
+
+<!-- Template Main JS File -->
+<script src=" {% static 'js/main.js' %} "></script>
+
+</body>
+
+</html>
