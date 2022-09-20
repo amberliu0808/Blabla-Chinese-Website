@@ -1,0 +1,1 @@
+web: gunicorn BlablaChinese1.wsgi --log-file -
