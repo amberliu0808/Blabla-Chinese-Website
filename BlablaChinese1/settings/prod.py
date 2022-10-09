@@ -7,7 +7,7 @@ from decouple import config
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 EMAIL_HOST_NAME = 'amberliu0808@foxmail.com'
