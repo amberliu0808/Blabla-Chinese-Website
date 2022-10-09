@@ -8,7 +8,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = False
 
 EMAIL_HOST_NAME = 'amberliu0808@foxmail.com'
 # EMAIL_HOST_NAME = '1540117707@qq.com'
