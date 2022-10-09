@@ -1,1 +1,3 @@
 venv/
+db.sqlite3
+/BlablaChinese1/settings/local.py
