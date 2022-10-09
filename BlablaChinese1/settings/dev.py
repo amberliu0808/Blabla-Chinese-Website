@@ -7,8 +7,13 @@ from decouple import config
 # SECRET_KEY = config('SECRET_KEY')
 SECRET_KEY = '+55v-#kn=c7#v!=3oh_wlf_k8qszgp-2qfi8zr5)z!vmn&1q8w'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 0
+SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+SECURE_HSTS_PRELOAD = False
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
