@@ -24,8 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-ALLOWED_HOSTS = ['blablachinese.com', 'web-staging-4e49.up.railway.app', '127.0.0.1']
-CSRF_TRUSTED_ORIGINS = ['https://blablachinese.com', 'https://web-staging-4e49.up.railway.app']
+ALLOWED_HOSTS = ['blablachinese.com', 'staging.blablachinese.com', 'web-staging-4e49.up.railway.app', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://blablachinese.com', 'https://staging.blablachinese.com',
+                        'https://web-staging-4e49.up.railway.app']
 
 # Application definition
 
