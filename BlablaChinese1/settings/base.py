@@ -30,6 +30,7 @@ CSRF_TRUSTED_ORIGINS = ['https://blablachinese.com', 'https://web-staging-4e49.u
 # Application definition
 
 INSTALLED_APPS = [
+    "whitenoise.runserver_nostatic",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -134,16 +135,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'blog'
 LOGOUT_REDIRECT_URL = 'blog'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.qq.com'
-# EMAIL_PORT = 587
-# EMAIL_PORT = 465
-EMAIL_PORT = 25
-EMAIL_HOST_NAME = 'amberliu0808@foxmail.com'
-# EMAIL_HOST_NAME = '1540117707@qq.com'
-EMAIL_HOST_PASSWORD = 'jrdfjxuajeijjbhh'
-# EMAIL_STARTTLS = True
-# EMAIL_SSL = False
-# EMAIL_SSL = True
-EMAIL_TLS = True
-EMAIL_FROM = 'Tencent<amberliu0808@foxmail.com>'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
