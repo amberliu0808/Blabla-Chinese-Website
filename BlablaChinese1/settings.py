@@ -163,7 +163,6 @@ EMAIL_PORT = 25
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 # EMAIL_STARTTLS = True
-# EMAIL_SSL = False
 # EMAIL_SSL = True
 EMAIL_TLS = True
 EMAIL_FROM = 'Tencent<amberliu0808@foxmail.com>'
