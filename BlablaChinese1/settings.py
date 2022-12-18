@@ -50,7 +50,6 @@ CSRF_COOKIE_SECURE = False
 # Application definition
 
 INSTALLED_APPS = [
-    'sslserver',
     "whitenoise.runserver_nostatic",
     'django.contrib.admin',
     'django.contrib.auth',
