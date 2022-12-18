@@ -36,20 +36,21 @@ DEBUG = config('DEBUG', cast=bool, default=False)
 ALLOWED_HOSTS = ['*']
 # ALLOWED_HOSTS = ['blablachinese.com', 'staging.blablachinese.com', 'web-staging-4e49.up.railway.app', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://blablachinese.com', 'https://staging.blablachinese.com',
-                        'https://web-staging-4e49.up.railway.app', 'https://127.0.0.1']
+                        'https://web-staging-3501.up.railway.app/', 'https://127.0.0.1', 'https://127.0.0.1:8000/']
 
 # only active this to True when in Production
 # SECURE_HSTS_SECONDS = 31536000
 # SECURE_HSTS_SECONDS = None
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_HSTS_PRELOAD = True
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
 
 # Application definition
 
 INSTALLED_APPS = [
+    'sslserver',
     "whitenoise.runserver_nostatic",
     'django.contrib.admin',
     'django.contrib.auth',
