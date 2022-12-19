@@ -43,9 +43,9 @@ CSRF_TRUSTED_ORIGINS = ['https://blablachinese.com', 'https://staging.blablachin
 # SECURE_HSTS_SECONDS = None
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_HSTS_PRELOAD = True
-SECURE_SSL_REDIRECT = False
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 # Application definition
 
