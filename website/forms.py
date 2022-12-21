@@ -10,7 +10,6 @@ for item in types:
     CATEGORY_TYPE.append(item)
 
 
-
 class PostForm(forms.ModelForm):
     class Meta:
         model = Blog
