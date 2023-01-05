@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 # from ckeditor.fields import RichTextField
 # from django_resized import ResizedImageField
 from PIL import Image
@@ -52,7 +53,7 @@ class Blog(models.Model):
     thumbnail = models.ImageField(upload_to='images/', blank=True, null=True)
     slug = models.CharField(max_length=100)
     author = models.ForeignKey(User, on_delete=models.CASCADE, default="Amber Liu")
-    created_time = models.DateTimeField(auto_now_add=True)
+    created_time = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.title
